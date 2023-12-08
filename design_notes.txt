@@ -1,0 +1,31 @@
+App
+	main()
+		runDraft()
+
+DraftManager
+	Hopper hopper;
+	PingPongBallFactory factory;
+	runDraft()
+		createDraftPurchaseOrder():Map<String, Integer>
+		orderBalls(PurchaseOrder)
+		loadHopperWithBalls(boxOfBalls)
+		turnHopperOn()
+		pickWinner():PingPongBall
+		announceWinner()
+	resetHopper()
+
+PingPongBallFactory
+	feed in txt file with "Team Name" #PingPongBalls
+	createBalls(PurchaseOrder):BoxOfBalls
+
+PingPongBall
+	String label
+	Ctor(teamName)
+
+Hopper
+	List<PingPongBall> cage;
+	loadHopper(boxOfBalls)
+	turnOn()
+		Collections.shuffle()
+	releaseWinningBall(cage):PingPongBall
+		Random() to select index
